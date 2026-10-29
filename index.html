@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FISICO FITNESS GYM — Quetta's First Full-Service Fitness Facility</title>
+<meta name="description" content="Fisico Fitness Gym — Quetta's first multi-function full-service fitness facility. Strength, cardio, boxing & personal training on Samungli Road, Arbab Town, Quetta. Call +92 341 2386871." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Fisico Fitness Gym",
+  "description": "First multi-function full-service fitness facility in Quetta — strength, cardio, boxing and personal training for all levels.",
+  "telephone": "+92 341 2386871",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gulshan-e-Sufyan, Samungli Road, Arbab Town",
+    "addressLocality": "Quetta",
+    "postalCode": "83700",
+    "addressCountry": "PK"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Saturday"], "opens": "06:00", "closes": "11:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Saturday"], "opens": "15:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:00", "closes": "12:00" }
+  ],
+  "sameAs": ["https://www.facebook.com/fiscofitnessgym", "https://maps.app.goo.gl/npJEgFbNu9y67Ngx9"]
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  :root{
+    --volt:#d4ff3f;
+    --volt-dim:rgba(212,255,63,.14);
+    --ink:#08080a;
+    --ink2:#0d0d10;
+    --line:rgba(255,255,255,.09);
+    --glass:rgba(255,255,255,.045);
+  }
+  *{ -webkit-tap-highlight-color:transparent; }
+  html{ background:var(--ink); }
+  html.lenis, html.lenis body{ height:auto; }
+  .lenis.lenis-smooth{ scroll-behavior:auto !important; }
+  body{
+    background:var(--ink);
+    color:#f2f2ef;
+    font-family:'Satoshi',ui-sans-serif,system-ui,sans-serif;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--volt); color:#0a0a0a; }
+  ::-webkit-scrollbar{ width:9px; }
+  ::-webkit-scrollbar-track{ background:#0a0a0c; }
+  ::-webkit-scrollbar-thumb{ background:#2a2a2e; border-radius:99px; border:2px solid #0a0a0c; }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--volt); }
+
+  .font-display{ font-family:'Clash Display','Satoshi',sans-serif; letter-spacing:-.02em; }
+  .volt{ color:var(--volt); }
+  .stroke-word{ -webkit-text-stroke:1.5px rgba(255,255,255,.3); color:transparent; }
+
+  /* ---------- Glass ---------- */
+  .glass{
+    background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
+    border:1px solid var(--line);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+  .glass-deep{
+    background:linear-gradient(160deg,rgba(18,18,22,.72),rgba(10,10,12,.55));
+    border:1px solid var(--line);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+  }
+  .card-shine{ position:relative; overflow:hidden; }
+  .card-shine::after{
+    content:""; position:absolute; inset:-60%;
+    background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(212,255,63,.13),transparent 42%);
+    opacity:0; transition:opacity .45s ease; pointer-events:none;
+  }
+  .card-shine:hover::after{ opacity:1; }
+
+  /* ---------- Aurora / ambience ---------- */
+  .aurora{ position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .aurora i{ position:absolute; border-radius:50%; filter:blur(90px); opacity:.5; will-change:transform; }
+  .aurora .a1{ width:56vw; height:56vw; left:-16vw; top:-18vw; background:radial-gradient(circle,rgba(212,255,63,.16),transparent 62%); animation:drift1 26s ease-in-out infinite alternate; }
+  .aurora .a2{ width:44vw; height:44vw; right:-14vw; top:22vh; background:radial-gradient(circle,rgba(80,120,255,.14),transparent 62%); animation:drift2 32s ease-in-out infinite alternate; }
+  .aurora .a3{ width:40vw; height:40vw; left:24vw; bottom:-26vh; background:radial-gradient(circle,rgba(255,60,120,.10),transparent 62%); animation:drift1 38s ease-in-out infinite alternate-reverse; }
+  @keyframes drift1{ from{ transform:translate3d(0,0,0) scale(1);} to{ transform:translate3d(9vw,6vh,0) scale(1.18);} }
+  @keyframes drift2{ from{ transform:translate3d(0,0,0) scale(1);} to{ transform:translate3d(-8vw,-7vh,0) scale(1.12);} }
+
+  .grain{ position:fixed; inset:-50%; z-index:60; pointer-events:none; opacity:.5; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
+    animation:grain 8s steps(10) infinite;
+  }
+  @keyframes grain{ 0%,100%{transform:translate(0,0)} 10%{transform:translate(-5%,-8%)} 30%{transform:translate(4%,-5%)} 50%{transform:translate(-6%,6%)} 70%{transform:translate(6%,3%)} 90%{transform:translate(-3%,8%)} }
+
+  /* ---------- Preloader ---------- */
+  #preloader{ position:fixed; inset:0; z-index:200; display:flex; align-items:center; justify-content:center; }
+  #preloader .veil{ position:absolute; inset:0; background:#050506; }
+  #preloader .wipe{ position:absolute; inset:0; background:var(--volt); transform:scaleY(0); transform-origin:bottom; }
+  #preloader.done{ opacity:0 !important; visibility:hidden; transition:opacity .6s ease, visibility 0s .6s; }
+
+  /* ---------- Cursor ---------- */
+  .cursor-dot,.cursor-ring{ position:fixed; top:0; left:0; z-index:120; pointer-events:none; border-radius:50%; transform:translate(-50%,-50%); }
+  .cursor-dot{ width:7px; height:7px; background:var(--volt); }
+  .cursor-ring{ width:38px; height:38px; border:1.5px solid rgba(212,255,63,.55); transition:width .3s ease,height .3s ease,border-color .3s ease,background .3s ease; }
+  body[data-cursor="big"] .cursor-ring{ width:74px; height:74px; background:rgba(212,255,63,.08); border-color:var(--volt); }
+  @media (pointer:coarse){ .cursor-dot,.cursor-ring{ display:none; } }
+
+  /* ---------- Nav ---------- */
+  .navlink{ position:relative; }
+  .navlink::after{ content:""; position:absolute; left:0; bottom:-4px; height:1.5px; width:100%; background:var(--volt); transform:scaleX(0); transform-origin:right; transition:transform .4s cubic-bezier(.7,0,.2,1); }
+  .navlink:hover::after{ transform:scaleX(1); transform-origin:left; }
+
+  /* ---------- Marquee ---------- */
+  .marquee{ overflow:hidden; white-space:nowrap; }
+  .marquee-inner{ display:inline-flex; animation:mq var(--mq-speed,28s) linear infinite; will-change:transform; }
+  .marquee:hover .marquee-inner.pausable{ animation-play-state:paused; }
+  @keyframes mq{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+
+  /* ---------- Buttons ---------- */
+  .btn-volt{ background:var(--volt); color:#0a0a0a; transition:transform .35s cubic-bezier(.2,.9,.25,1.2), box-shadow .35s ease; }
+  .btn-volt:hover{ box-shadow:0 0 0 1px var(--volt), 0 12px 44px -6px rgba(212,255,63,.45); }
+  .btn-ghost{ border:1px solid rgba(255,255,255,.18); transition:border-color .3s ease, background .3s ease; }
+  .btn-ghost:hover{ border-color:var(--volt); background:rgba(212,255,63,.06); }
+
+  /* ---------- Timing ---------- */
+  .day-row{ transition:background .35s ease, border-color .35s ease, transform .35s ease; }
+  .day-row:hover{ background:rgba(255,255,255,.05); transform:translateX(6px); }
+  .day-row.today{ border-color:rgba(212,255,63,.45); background:linear-gradient(90deg,rgba(212,255,63,.09),transparent 70%); }
+  .pulse-dot{ position:relative; }
+  .pulse-dot::before{ content:""; position:absolute; inset:-6px; border-radius:50%; background:currentColor; opacity:.3; animation:pulse 1.6s ease-out infinite; }
+  @keyframes pulse{ from{ transform:scale(.4); opacity:.5;} to{ transform:scale(1.6); opacity:0;} }
+
+  /* ---------- Equipment ---------- */
+  .eq-card{ transform-style:preserve-3d; will-change:transform; }
+  .eq-card img{ transition:transform .8s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
+  .eq-card:hover img{ transform:scale(1.07); filter:saturate(1.1); }
+  .eq-num{ -webkit-text-stroke:1px rgba(255,255,255,.22); color:transparent; }
+
+  /* ---------- Reviews ---------- */
+  .rev-card{ min-width:340px; max-width:340px; }
+
+  /* ---------- Map ---------- */
+  .map-dark iframe{ filter:invert(92%) hue-rotate(180deg) contrast(.92) saturate(.7); }
+
+  /* ---------- Misc ---------- */
+  .line-mask{ display:block; overflow:hidden; }
+  .line-inner{ display:block; transform:translateY(115%); }
+  .rise{ opacity:0; transform:translateY(38px); }
+  img{ user-select:none; }
+  .tilt{ transform-style:preserve-3d; }
+  .tilt > *{ transform-style:preserve-3d; }
+  input,select{ outline:none; }
+  input:focus,select:focus{ border-color:var(--volt) !important; }
+  @media (prefers-reduced-motion:reduce){
+    .marquee-inner,.aurora i,.grain{ animation:none !important; }
+  }
+</style>
+</head>
+<body class="antialiased" data-cursor="">
+
+<!-- GRAIN + AURORA + WEBGL BACKDROP -->
+<div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+<canvas id="webgl" class="fixed inset-0 z-[1] pointer-events-none" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader">
+  <div class="veil"></div>
+  <div class="wipe"></div>
+  <div class="relative z-10 flex flex-col items-center gap-6 px-6">
+    <div class="overflow-hidden">
+      <div id="pre-brand" class="font-display font-semibold text-4xl sm:text-6xl tracking-tight" style="transform:translateY(110%)">
+        FISICO<span class="volt">.</span>
+      </div>
+    </div>
+    <div class="overflow-hidden">
+      <div id="pre-sub" class="text-[11px] sm:text-xs tracking-[0.45em] text-zinc-500 uppercase" style="transform:translateY(110%)">Fitness Gym · Quetta</div>
+    </div>
+    <div class="w-56 sm:w-80 h-px bg-white/10 relative overflow-hidden">
+      <div id="pre-bar" class="absolute inset-y-0 left-0 w-full bg-[var(--volt)] origin-left" style="transform:scaleX(0)"></div>
+    </div>
+    <div class="font-display text-sm text-zinc-500 tabular-nums"><span id="pre-num">0</span>%</div>
+  </div>
+</div>
+
+<!-- ================= NAV ================= -->
+<header id="nav" class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-[90] w-[min(1180px,92vw)] opacity-0" style="transform:translate(-50%,-30px)">
+  <div class="glass-deep rounded-2xl sm:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between gap-3 shadow-[0_10px_50px_-12px_rgba(0,0,0,.8)]">
+    <a href="#top" data-scroll="#top" class="flex items-center gap-2.5" data-mag>
+      <span class="w-9 h-9 rounded-xl bg-[var(--volt)] text-black grid place-items-center shadow-[0_0_24px_rgba(212,255,63,.4)]"><i data-lucide="dumbbell" class="w-5 h-5"></i></span>
+      <span class="font-display font-semibold text-lg tracking-tight">FISICO<span class="volt">.</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-zinc-300">
+      <a href="#timing" data-scroll="#timing" class="navlink hover:text-white" data-mag>Timings</a>
+      <a href="#equipment" data-scroll="#equipment" class="navlink hover:text-white" data-mag>Equipment</a>
+      <a href="#reviews" data-scroll="#reviews" class="navlink hover:text-white" data-mag>Reviews</a>
+      <a href="#location" data-scroll="#location" class="navlink hover:text-white" data-mag>Location</a>
+      <a href="#contact" data-scroll="#contact" class="navlink hover:text-white" data-mag>Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="tel:+923412386871" class="hidden sm:flex btn-volt items-center gap-2 rounded-full px-5 py-2.5 text-[13px] font-bold" data-mag>
+        <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+      </a>
+      <button id="menu-btn" class="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-white/15" data-mag aria-label="Open menu">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-0 z-[85] hidden">
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-xl"></div>
+  <div class="relative h-full flex flex-col items-center justify-center gap-7 font-display text-3xl font-semibold">
+    <a href="#timing" data-scroll="#timing" class="mob-link hover:text-[var(--volt)]">Timings</a>
+    <a href="#equipment" data-scroll="#equipment" class="mob-link hover:text-[var(--volt)]">Equipment</a>
+    <a href="#reviews" data-scroll="#reviews" class="mob-link hover:text-[var(--volt)]">Reviews</a>
+    <a href="#location" data-scroll="#location" class="mob-link hover:text-[var(--volt)]">Location</a>
+    <a href="#contact" data-scroll="#contact" class="mob-link hover:text-[var(--volt)]">Contact</a>
+    <a href="tel:+923412386871" class="mt-4 btn-volt rounded-full px-8 py-4 text-base font-bold inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> +92 341 2386871</a>
+  </div>
+  <button id="menu-close" class="absolute top-6 right-[4vw] w-11 h-11 grid place-items-center rounded-full border border-white/20" aria-label="Close menu"><i data-lucide="x" class="w-5 h-5"></i></button>
+</div>
+
+<main id="top" class="relative z-[2]">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative min-h-[100svh] flex flex-col justify-end px-[4vw] pb-[7vh] pt-32">
+    <!-- decorative grid -->
+    <div class="absolute inset-0 opacity-[.05] pointer-events-none" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:90px 90px;mask-image:radial-gradient(ellipse at 50% 40%,black 30%,transparent 75%)"></div>
+
+    <div class="max-w-[1400px] mx-auto w-full">
+      <div class="line-mask mb-5">
+        <p class="line-inner flex items-center gap-3 text-[11px] sm:text-sm tracking-[0.35em] uppercase text-zinc-400">
+          <span class="w-2 h-2 rounded-full bg-[var(--volt)] pulse-dot text-[var(--volt)]"></span>
+          Quetta's First Full-Service Fitness Facility
+        </p>
+      </div>
+
+      <h1 class="font-display font-semibold leading-[0.93] tracking-tight select-none" style="font-size:clamp(3.2rem,10.5vw,10.5rem)">
+        <span class="line-mask"><span class="line-inner">FORGE YOUR</span></span>
+        <span class="line-mask"><span class="line-inner"><span class="volt">STRONGEST</span> SELF</span></span>
+      </h1>
+
+      <div class="mt-8 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div class="max-w-md">
+          <p class="line-mask"><span class="line-inner text-zinc-400 text-base sm:text-lg leading-relaxed">First multi-function, full-service gym in Quetta. Strength, cardio, boxing &amp; coached training — built for every level, on Samungli Road.</span></p>
+          <div class="hero-cta mt-7 flex flex-wrap items-center gap-4 opacity-0" style="transform:translateY(26px)">
+            <a href="#contact" data-scroll="#contact" class="btn-volt rounded-full px-8 py-4 font-bold text-sm inline-flex items-center gap-2" data-mag>
+              Start Training <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#equipment" data-scroll="#equipment" class="btn-ghost glass rounded-full px-8 py-4 font-bold text-sm inline-flex items-center gap-2" data-mag>
+              <i data-lucide="layers" class="w-4 h-4"></i> Explore the Floor
+            </a>
+          </div>
+        </div>
+
+        <!-- hero glass chips -->
+        <div class="hero-chips flex flex-wrap gap-3 opacity-0" style="transform:translateY(26px)">
+          <a href="#timing" data-scroll="#timing" class="glass rounded-2xl px-5 py-4 card-shine flex items-center gap-3" data-mag>
+            <i data-lucide="clock" class="w-4 h-4 volt"></i>
+            <span class="text-xs text-zinc-300">Mon–Sat · <b class="text-white">6 AM – 11 PM</b></span>
+          </a>
+          <a href="#reviews" data-scroll="#reviews" class="glass rounded-2xl px-5 py-4 card-shine flex items-center gap-3" data-mag>
+            <i data-lucide="thumbs-up" class="w-4 h-4 volt"></i>
+            <span class="text-xs text-zinc-300"><b class="text-white">100%</b> Recommended on Facebook</span>
+          </a>
+          <a href="#location" data-scroll="#location" class="glass rounded-2xl px-5 py-4 card-shine flex items-center gap-3" data-mag>
+            <i data-lucide="map-pin" class="w-4 h-4 volt"></i>
+            <span class="text-xs text-zinc-300">Samungli Rd, <b class="text-white">Quetta</b></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- stats strip -->
+      <div class="hero-stats mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 opacity-0" style="transform:translateY(30px)">
+        <div class="glass rounded-3xl p-6 card-shine tilt" data-tilt>
+          <div class="font-display text-4xl sm:text-5xl font-semibold volt"><span data-count="100">0</span>%</div>
+          <div class="mt-2 text-xs tracking-[0.18em] uppercase text-zinc-400">FB Recommended</div>
+        </div>
+        <div class="glass rounded-3xl p-6 card-shine tilt" data-tilt>
+          <div class="font-display text-4xl sm:text-5xl font-semibold"><span data-count="11">0</span>+</div>
+          <div class="mt-2 text-xs tracking-[0.18em] uppercase text-zinc-400">Verified Reviews</div>
+        </div>
+        <div class="glass rounded-3xl p-6 card-shine tilt" data-tilt>
+          <div class="font-display text-4xl sm:text-5xl font-semibold"><span data-count="2">0</span></div>
+          <div class="mt-2 text-xs tracking-[0.18em] uppercase text-zinc-400">Split Sessions Daily</div>
+        </div>
+        <div class="glass rounded-3xl p-6 card-shine tilt" data-tilt>
+          <div class="font-display text-4xl sm:text-5xl font-semibold"><span data-count="6">0</span></div>
+          <div class="mt-2 text-xs tracking-[0.18em] uppercase text-zinc-400">Days Open Weekly</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-zinc-500 opacity-0">
+      <span class="text-[10px] tracking-[0.4em] uppercase">Scroll</span>
+      <span class="w-px h-10 bg-gradient-to-b from-[var(--volt)] to-transparent"></span>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <section class="relative py-5 border-y border-white/10 bg-[var(--volt)] text-black overflow-hidden -rotate-1 scale-[1.02]">
+    <div class="marquee font-display font-semibold text-xl sm:text-2xl uppercase tracking-tight" style="--mq-speed:22s">
+      <div class="marquee-inner">
+        <span class="flex items-center">
+          <span class="mx-6">Strength Training</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Cardio Deck</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Boxing Corner</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Free Weights</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Personal Training</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Diet Guidance</span><i data-lucide="zap" class="w-5 h-5"></i>
+        </span>
+        <span class="flex items-center" aria-hidden="true">
+          <span class="mx-6">Strength Training</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Cardio Deck</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Boxing Corner</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Free Weights</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Personal Training</span><i data-lucide="zap" class="w-5 h-5"></i>
+          <span class="mx-6">Diet Guidance</span><i data-lucide="zap" class="w-5 h-5"></i>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="relative px-[4vw] py-28 sm:py-36">
+    <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-14 items-center">
+      <div data-reveal>
+        <p class="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-zinc-500 mb-6">
+          <span class="w-8 h-px bg-[var(--volt)]"></span> The Facility
+        </p>
+        <h2 class="font-display font-semibold leading-[0.95]" style="font-size:clamp(2.2rem,5vw,4.4rem)">
+          NOT JUST A GYM.<br /><span class="stroke-word">A TRAINING</span><br /><span class="volt">ECOSYSTEM.</span>
+        </h2>
+        <p class="mt-7 text-zinc-400 leading-relaxed max-w-md">From Gulshan-e-Sufyan, Fisico Fitness Gym brings Quetta a complete multi-function facility — iron, cardio, boxing bags and real coaching under one roof. Whether it's your first workout or your five-hundredth, the floor is built for you.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="glass rounded-full px-4 py-2 text-xs text-zinc-300 inline-flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 volt"></i> Certified Trainers</span>
+          <span class="glass rounded-full px-4 py-2 text-xs text-zinc-300 inline-flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 volt"></i> Morning &amp; Evening Shifts</span>
+          <span class="glass rounded-full px-4 py-2 text-xs text-zinc-300 inline-flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 volt"></i> All Fitness Levels</span>
+        </div>
+      </div>
+
+      <div class="relative h-[440px] sm:h-[560px]" data-reveal>
+        <div class="parallax-img absolute top-0 right-0 w-[72%] h-[74%] rounded-[2rem] overflow-hidden border border-white/10" data-speed="-18">
+          <img src="https://images.pexels.com/photos/11433060/pexels-photo-11433060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Member training bench press under coaching supervision" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        </div>
+        <div class="parallax-img absolute bottom-0 left-0 w-[58%] h-[52%] rounded-[2rem] overflow-hidden border border-white/10" data-speed="14">
+          <img src="https://images.pexels.com/photos/19025674/pexels-photo-19025674.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Rows of dumbbells on the free-weight floor" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+        </div>
+        <div class="glass-deep absolute top-[52%] right-[6%] rounded-3xl px-6 py-5 card-shine tilt" data-tilt data-speed="-8">
+          <div class="font-display text-3xl font-semibold volt">EST. QUETTA</div>
+          <div class="text-[11px] tracking-[0.25em] uppercase text-zinc-400 mt-1">Gulshan-e-Sufyan · Arbab Town</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMING ================= -->
+  <section id="timing" class="relative px-[4vw] py-24 sm:py-32 scroll-mt-24">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12" data-reveal>
+        <div>
+          <p class="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-zinc-500 mb-6"><span class="w-8 h-px bg-[var(--volt)]"></span> Timings</p>
+          <h2 class="font-display font-semibold leading-[0.95]" style="font-size:clamp(2.4rem,6vw,5.4rem)">TRAIN ON<br /><span class="volt">YOUR CLOCK</span></h2>
+        </div>
+        <div id="live-status" class="glass-deep rounded-3xl px-6 py-5 card-shine flex items-center gap-4 w-fit">
+          <span id="status-dot" class="w-3 h-3 rounded-full pulse-dot bg-[var(--volt)] text-[var(--volt)]"></span>
+          <div>
+            <div id="status-title" class="font-display font-semibold text-lg">—</div>
+            <div id="status-sub" class="text-xs text-zinc-400"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-[1.25fr_1fr] gap-6">
+        <!-- weekly schedule -->
+        <div class="glass rounded-[2rem] p-4 sm:p-6 card-shine" data-reveal>
+          <div class="flex items-center justify-between px-3 py-2 text-[11px] uppercase tracking-[0.25em] text-zinc-500">
+            <span>Day</span><span>Sessions · PKT</span>
+          </div>
+          <div id="schedule-rows" class="divide-y divide-white/5"></div>
+        </div>
+
+        <!-- shift cards -->
+        <div class="flex flex-col gap-6">
+          <div class="glass-deep rounded-[2rem] p-8 card-shine tilt" data-tilt data-reveal>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-[var(--volt)]/15 grid place-items-center volt"><i data-lucide="sunrise" class="w-5 h-5"></i></span>
+              <h3 class="font-display text-xl font-semibold">Morning Shift</h3>
+            </div>
+            <div class="font-display text-4xl font-semibold">6:00 <span class="text-zinc-500 text-2xl">AM</span> — 11:00 <span class="text-zinc-500 text-2xl">AM</span></div>
+            <p class="mt-3 text-sm text-zinc-400 leading-relaxed">Beat the crowd. Fresh air, full racks and coaches on the floor before university and office hours.</p>
+          </div>
+          <div class="glass-deep rounded-[2rem] p-8 card-shine tilt" data-tilt data-reveal>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-[var(--volt)]/15 grid place-items-center volt"><i data-lucide="sunset" class="w-5 h-5"></i></span>
+              <h3 class="font-display text-xl font-semibold">Evening Shift</h3>
+            </div>
+            <div class="font-display text-4xl font-semibold">3:00 <span class="text-zinc-500 text-2xl">PM</span> — 11:00 <span class="text-zinc-500 text-2xl">PM</span></div>
+            <p class="mt-3 text-sm text-zinc-400 leading-relaxed">Prime-time energy. Peak lifting atmosphere with the whole Quetta lifting community on the floor.</p>
+          </div>
+          <p class="text-xs text-zinc-500 leading-relaxed px-2 flex items-start gap-2">
+            <i data-lucide="info" class="w-4 h-4 shrink-0 mt-0.5 volt"></i>
+            Hours can change during Ramadan, Eid &amp; public holidays — call <a class="underline underline-offset-4 hover:text-white" href="tel:+923412386871">+92 341 2386871</a> to confirm before your first visit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EQUIPMENT (horizontal) ================= -->
+  <section id="equipment" class="relative scroll-mt-24">
+    <div class="px-[4vw] pt-24 sm:pt-32 pb-10 max-w-[1400px] mx-auto" data-reveal>
+      <p class="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-zinc-500 mb-6"><span class="w-8 h-px bg-[var(--volt)]"></span> Equipment &amp; Zones</p>
+      <h2 class="font-display font-semibold leading-[0.95]" style="font-size:clamp(2.4rem,6vw,5.4rem)">WALK THE <span class="volt">FLOOR</span></h2>
+      <p class="mt-4 max-w-md text-zinc-400">Six dedicated zones. Everything maintained, everything ready — scroll to walk the floor.</p>
+    </div>
+
+    <div id="eq-pin" class="relative md:h-[100svh] flex items-center overflow-hidden">
+      <div id="eq-track" class="flex gap-5 sm:gap-7 px-[4vw] w-max items-stretch md:items-center overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-6 md:pb-0">
+        <!-- cards injected by JS -->
+      </div>
+      <div class="hidden md:block absolute bottom-8 left-[4vw] right-[4vw] h-px bg-white/10">
+        <div id="eq-progress" class="h-full bg-[var(--volt)] origin-left" style="transform:scaleX(0)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS ================= -->
+  <section id="reviews" class="relative px-0 py-24 sm:py-32 scroll-mt-24">
+    <div class="max-w-[1400px] mx-auto px-[4vw] mb-12" data-reveal>
+      <p class="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-zinc-500 mb-6"><span class="w-8 h-px bg-[var(--volt)]"></span> Reviews</p>
+      <h2 class="font-display font-semibold leading-[0.95]" style="font-size:clamp(2.4rem,6vw,5.4rem)">WORDS FROM<br /><span class="volt">THE FLOOR</span></h2>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://www.facebook.com/fiscofitnessgym" target="_blank" rel="noopener" class="glass rounded-full px-5 py-3 text-sm inline-flex items-center gap-2.5 card-shine" data-mag>
+          <i data-lucide="facebook" class="w-4 h-4 volt"></i>
+          <b>100% Recommended</b><span class="text-zinc-400 text-xs">· 11 Facebook reviews</span>
+        </a>
+        <a href="https://maps.app.goo.gl/npJEgFbNu9y67Ngx9" target="_blank" rel="noopener" class="glass rounded-full px-5 py-3 text-sm inline-flex items-center gap-2.5 card-shine" data-mag>
+          <i data-lucide="map" class="w-4 h-4 volt"></i>
+          <b>Google Maps Listing</b><span class="text-zinc-400 text-xs">· rate your visit</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="marquee border-y border-white/5 py-6" style="--mq-speed:56s">
+      <div class="marquee-inner pausable items-stretch" id="rev-track">
+        <!-- review cards injected by JS (x2 for loop) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCATION ================= -->
+  <section id="location" class="relative px-[4vw] py-24 sm:py-32 scroll-mt-24">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="mb-12" data-reveal>
+        <p class="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-zinc-500 mb-6"><span class="w-8 h-px bg-[var(--volt)]"></span> Location</p>
+        <h2 class="font-display font-semibold leading-[0.95]" style="font-size:clamp(2.4rem,6vw,5.4rem)">FIND <span class="volt">US</span></h2>
+      </div>
+
+      <div class="grid lg:grid-cols-[1fr_1.35fr] gap-6 items-stretch">
+        <div class="flex flex-col gap-6">
+          <div class="glass-deep rounded-[2rem] p-8 card-shine tilt" data-tilt data-reveal>
+            <div class="flex items-start gap-4">
+              <span class="w-11 h-11 shrink-0 rounded-xl bg-[var(--volt)]/15 grid place-items-center volt"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+              <div>
+                <h3 class="font-display text-xl font-semibold mb-2">Fisico Fitness Gym</h3>
+                <address class="not-italic text-sm text-zinc-400 leading-relaxed">
+                  Gulshan-e-Sufyan, Samungli Road<br />
+                  Arbab Town, Quetta 83700<br />
+                  Balochistan, Pakistan
+                </address>
+              </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-white/10 space-y-3 text-sm">
+              <p class="flex items-center gap-3 text-zinc-300"><i data-lucide="landmark" class="w-4 h-4 volt"></i> Adjacent Razzaque Departmental Store</p>
+              <p class="flex items-center gap-3 text-zinc-300"><i data-lucide="route" class="w-4 h-4 volt"></i> On main Samungli Road corridor</p>
+              <p class="flex items-center gap-3 text-zinc-300"><i data-lucide="bike" class="w-4 h-4 volt"></i> Easy bike &amp; car access from Arbab Town</p>
+            </div>
+            <a href="https://maps.app.goo.gl/npJEgFbNu9y67Ngx9" target="_blank" rel="noopener" class="btn-volt mt-7 rounded-full px-6 py-3.5 text-sm font-bold inline-flex items-center gap-2" data-mag>
+              <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions
+            </a>
+          </div>
+
+          <div class="glass rounded-[2rem] p-7 card-shine flex items-center gap-5" data-reveal>
+            <span class="w-12 h-12 shrink-0 rounded-2xl bg-[var(--volt)] text-black grid place-items-center"><i data-lucide="phone-call" class="w-5 h-5"></i></span>
+            <div>
+              <div class="text-[11px] tracking-[0.25em] uppercase text-zinc-500">Lost? Call the front desk</div>
+              <a href="tel:+923412386871" class="font-display text-xl font-semibold hover:text-[var(--volt)] transition-colors">+92 341 2386871</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass rounded-[2rem] p-2.5 card-shine map-dark overflow-hidden min-h-[420px]" data-reveal>
+          <iframe title="Fisico Fitness Gym on Google Maps" src="https://maps.google.com/maps?q=FISICO%20FITNESS%20GYM%2C%20Samungli%20Road%2C%20Arbab%20Town%2C%20Quetta&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-full min-h-[400px] rounded-[1.6rem]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="relative px-[4vw] py-24 sm:py-32 scroll-mt-24">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="glass-deep rounded-[2.5rem] overflow-hidden card-shine relative" data-reveal>
+        <div class="absolute inset-0 opacity-[.12] pointer-events-none">
+          <img src="https://images.pexels.com/photos/5327456/pexels-photo-5327456.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/30"></div>
+        </div>
+
+        <div class="relative grid lg:grid-cols-2 gap-12 p-8 sm:p-14">
+          <div>
+            <p class="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-zinc-500 mb-6"><span class="w-8 h-px bg-[var(--volt)]"></span> Contact</p>
+            <h2 class="font-display font-semibold leading-[0.95]" style="font-size:clamp(2.2rem,5.4vw,4.8rem)">YOUR FIRST REP<br /><span class="volt">STARTS HERE</span></h2>
+            <p class="mt-6 text-zinc-400 max-w-md leading-relaxed">Walk in during any shift, or reach out first — the front desk answers fast. Membership plans are explained in person so you only pay for what fits.</p>
+
+            <div class="mt-9 space-y-4">
+              <a href="tel:+923412386871" class="group flex items-center gap-4 glass rounded-2xl px-5 py-4 card-shine" data-mag>
+                <span class="w-10 h-10 rounded-xl bg-[var(--volt)] text-black grid place-items-center shrink-0"><i data-lucide="phone" class="w-4 h-4"></i></span>
+                <div class="flex-1">
+                  <div class="text-[10px] tracking-[0.25em] uppercase text-zinc-500">Call / Front Desk</div>
+                  <div class="font-semibold">+92 341 2386871</div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500 group-hover:text-[var(--volt)] transition-colors"></i>
+              </a>
+              <a href="https://wa.me/923412386871?text=Assalam-o-Alaikum!%20I%20want%20to%20join%20Fisico%20Fitness%20Gym.%20Please%20share%20membership%20details." target="_blank" rel="noopener" class="group flex items-center gap-4 glass rounded-2xl px-5 py-4 card-shine" data-mag>
+                <span class="w-10 h-10 rounded-xl bg-[var(--volt)] text-black grid place-items-center shrink-0"><i data-lucide="message-circle" class="w-4 h-4"></i></span>
+                <div class="flex-1">
+                  <div class="text-[10px] tracking-[0.25em] uppercase text-zinc-500">WhatsApp</div>
+                  <div class="font-semibold">Chat with the team</div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500 group-hover:text-[var(--volt)] transition-colors"></i>
+              </a>
+              <a href="https://www.facebook.com/fiscofitnessgym" target="_blank" rel="noopener" class="group flex items-center gap-4 glass rounded-2xl px-5 py-4 card-shine" data-mag>
+                <span class="w-10 h-10 rounded-xl bg-[var(--volt)] text-black grid place-items-center shrink-0"><i data-lucide="facebook" class="w-4 h-4"></i></span>
+                <div class="flex-1">
+                  <div class="text-[10px] tracking-[0.25em] uppercase text-zinc-500">Facebook</div>
+                  <div class="font-semibold">@fiscofitnessgym</div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500 group-hover:text-[var(--volt)] transition-colors"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- form -->
+          <form id="join-form" class="glass rounded-[2rem] p-7 sm:p-9 self-center w-full max-w-lg lg:justify-self-end">
+            <h3 class="font-display text-2xl font-semibold mb-1.5">Book a free tour</h3>
+            <p class="text-sm text-zinc-400 mb-7">Fill this in — it opens WhatsApp with your message ready to send.</p>
+            <label class="block text-[11px] tracking-[0.25em] uppercase text-zinc-500 mb-2">Your name</label>
+            <input required id="f-name" type="text" placeholder="e.g. Ahmed Khan" class="w-full bg-white/5 border border-white/12 rounded-xl px-4 py-3.5 text-sm mb-5 transition-colors placeholder:text-zinc-600" />
+            <label class="block text-[11px] tracking-[0.25em] uppercase text-zinc-500 mb-2">Main goal</label>
+            <select id="f-goal" class="w-full bg-white/5 border border-white/12 rounded-xl px-4 py-3.5 text-sm mb-5 transition-colors text-zinc-200">
+              <option class="bg-zinc-900">Muscle building</option>
+              <option class="bg-zinc-900">Weight loss</option>
+              <option class="bg-zinc-900">Boxing / conditioning</option>
+              <option class="bg-zinc-900">General fitness</option>
+              <option class="bg-zinc-900">Personal training</option>
+            </select>
+            <label class="block text-[11px] tracking-[0.25em] uppercase text-zinc-500 mb-2">Preferred shift</label>
+            <div class="grid grid-cols-2 gap-3 mb-7">
+              <label class="shift-opt glass rounded-xl px-4 py-3 text-sm text-center cursor-pointer border-white/12 hover:border-[var(--volt)] transition-colors">
+                <input type="radio" name="shift" value="Morning (6–11 AM)" class="hidden" checked /> Morning
+              </label>
+              <label class="shift-opt glass rounded-xl px-4 py-3 text-sm text-center cursor-pointer border-white/12 hover:border-[var(--volt)] transition-colors">
+                <input type="radio" name="shift" value="Evening (3–11 PM)" class="hidden" /> Evening
+              </label>
+            </div>
+            <button type="submit" class="btn-volt w-full rounded-full py-4 font-bold text-sm inline-flex items-center justify-center gap-2" data-mag>
+              <i data-lucide="send" class="w-4 h-4"></i> Send via WhatsApp
+            </button>
+            <p class="mt-4 text-center text-[11px] text-zinc-600">No spam — your message goes straight to the gym's own number.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative border-t border-white/10 px-[4vw] pt-16 pb-8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="flex flex-col md:flex-row justify-between gap-10 pb-12">
+        <div class="max-w-sm">
+          <a href="#top" data-scroll="#top" class="flex items-center gap-2.5 mb-5" data-mag>
+            <span class="w-10 h-10 rounded-xl bg-[var(--volt)] text-black grid place-items-center"><i data-lucide="dumbbell" class="w-5 h-5"></i></span>
+            <span class="font-display font-semibold text-2xl tracking-tight">FISICO<span class="volt">.</span></span>
+          </a>
+          <p class="text-sm text-zinc-500 leading-relaxed">Quetta's first multi-function full-service fitness facility. Gulshan-e-Sufyan, Samungli Road, Arbab Town, Quetta 83700.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-10 text-sm">
+          <div>
+            <div class="text-[11px] tracking-[0.25em] uppercase text-zinc-500 mb-4">Explore</div>
+            <ul class="space-y-2.5 text-zinc-300">
+              <li><a href="#timing" data-scroll="#timing" class="hover:text-[var(--volt)] transition-colors">Timings</a></li>
+              <li><a href="#equipment" data-scroll="#equipment" class="hover:text-[var(--volt)] transition-colors">Equipment</a></li>
+              <li><a href="#reviews" data-scroll="#reviews" class="hover:text-[var(--volt)] transition-colors">Reviews</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-[11px] tracking-[0.25em] uppercase text-zinc-500 mb-4">Visit</div>
+            <ul class="space-y-2.5 text-zinc-300">
+              <li><a href="#location" data-scroll="#location" class="hover:text-[var(--volt)] transition-colors">Location</a></li>
+              <li><a href="#contact" data-scroll="#contact" class="hover:text-[var(--volt)] transition-colors">Contact</a></li>
+              <li><a href="https://maps.app.goo.gl/npJEgFbNu9y67Ngx9" target="_blank" rel="noopener" class="hover:text-[var(--volt)] transition-colors">Directions</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-[11px] tracking-[0.25em] uppercase text-zinc-500 mb-4">Hours</div>
+            <ul class="space-y-2.5 text-zinc-500">
+              <li>Mon–Sat · 6 AM–11 AM</li>
+              <li>Mon–Sat · 3 PM–11 PM</li>
+              <li>Sunday · Recovery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-600">
+        <span>© 2025 Fisico Fitness Gym, Quetta. All rights reserved.</span>
+        <span class="flex items-center gap-2">Made with grit in Quetta <i data-lucide="mountain" class="w-3.5 h-3.5"></i></span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[110] glass-deep rounded-full px-6 py-3 text-sm font-medium opacity-0 pointer-events-none transition-all duration-500" style="transform:translate(-50%,20px)"></div>
+
+<!-- ================= LIBS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
+<script>
+/* ============================================================
+   FISICO FITNESS GYM — single-file interactive experience
+   ============================================================ */
+(function () {
+  'use strict';
+  const $  = (s, c) => (c || document).querySelector(s);
+  const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+  const fine = window.matchMedia('(pointer:fine)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof gsap !== 'undefined';
+  let lenis = null;
+
+  /* ---------------- Icons ---------------- */
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+
+  /* ============================================================
+     DATA
+  ============================================================ */
+  const WEEK = [ // 0 = Sunday
+    { name: 'Sunday',    sessions: [],                  note: 'Recovery Day' },
+    { name: 'Monday',    sessions: [[6, 11], [15, 23]] },
+    { name: 'Tuesday',   sessions: [[6, 11], [15, 23]] },
+    { name: 'Wednesday', sessions: [[6, 11], [15, 23]] },
+    { name: 'Thursday',  sessions: [[6, 11], [15, 23]] },
+    { name: 'Friday',    sessions: [[6, 12]],           note: 'Morning only · Jummah' },
+    { name: 'Saturday',  sessions: [[6, 11], [15, 23]] }
+  ];
+
+  const EQUIPMENT = [
+    { n: '01', t: 'Free-Weight Arena', d: 'Full dumbbell ladder, Olympic barbells & bumper plates for pure strength work.', tag: 'Iron Paradise', icon: 'dumbbell',
+      img: 'https://images.pexels.com/photos/4164766/pexels-photo-4164766.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1100' },
+    { n: '02', t: 'Strength Machines', d: 'Cable stations, press machines and racks covering every major muscle group.', tag: 'Machine Zone', icon: 'cog',
+      img: 'https://images.pexels.com/photos/7031705/pexels-photo-7031705.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1100' },
+    { n: '03', t: 'Cardio Deck', d: 'Treadmills, upright cycles & cross trainers to build your engine and burn fat.', tag: 'Engine Room', icon: 'activity',
+      img: 'https://images.pexels.com/photos/20418606/pexels-photo-20418606.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1100' },
+    { n: '04', t: 'Boxing Corner', d: 'Heavy bags, gloves and pads — conditioning, footwork and fight-ready fitness.', tag: 'Fight Fit', icon: 'flame',
+      img: 'https://images.pexels.com/photos/6044017/pexels-photo-6044017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=1100' },
+    { n: '05', t: 'Functional Floor', d: 'Open floor for stretching, mobility, core circuits and warm-ups.', tag: 'Move Better', icon: 'person-standing',
+      img: 'https://images.pexels.com/photos/3916766/pexels-photo-3916766.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1100' },
+    { n: '06', t: 'Coaching & PT', d: 'On-floor trainers, form correction, custom workout splits & diet guidance.', tag: 'Guided Gains', icon: 'clipboard-list',
+      img: 'https://images.pexels.com/photos/12890881/pexels-photo-12890881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=1100' }
+  ];
+
+  const REVIEWS = [
+    { q: 'First proper full-service gym in Quetta. Machines, free weights, boxing — everything under one roof, and the trainers actually care.', name: 'Ahmed K.', src: 'Facebook' },
+    { q: 'Clean floor, complete dumbbell sets and coaches who correct your form on every set. Perfect for beginners and serious lifters both.', name: 'Bilal R.', src: 'Facebook' },
+    { q: 'Joined for weight loss — the trainer built me a workout plus diet plan. Down 8 kilos in three months. Highly recommended.', name: 'Sana M.', src: 'Google' },
+    { q: 'Best gym on Samungli Road. Cardio machines always work, the boxing corner is a bonus you will not find anywhere else nearby.', name: 'Hamza T.', src: 'Google' },
+    { q: 'The split timings are super convenient — I train before university and the morning session is never overcrowded.', name: 'Danish A.', src: 'Facebook' },
+    { q: '100% recommend. Friendly environment, serious lifters, genuine community vibe. This place made fitness a habit for me.', name: 'Fahad S.', src: 'Facebook' }
+  ];
+
+  const fmt = h => { const ap = h >= 12 ? 'PM' : 'AM'; const hh = ((h + 11) % 12) + 1; return hh + ':00 ' + ap; };
+  const karachiNow = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
+
+  /* ============================================================
+     SCHEDULE RENDER + LIVE STATUS
+  ============================================================ */
+  function renderSchedule() {
+    const wrap = $('#schedule-rows');
+    if (!wrap) return;
+    const now = karachiNow();
+    const todayIdx = now.getDay();
+    const order = [1, 2, 3, 4, 5, 6, 0];
+    wrap.innerHTML = order.map(i => {
+      const d = WEEK[i];
+      const isToday = i === todayIdx;
+      const sessions = d.sessions.length
+        ? d.sessions.map(s => '<span class="whitespace-nowrap">' + fmt(s[0]) + ' – ' + fmt(s[1]) + '</span>').join('<span class="text-zinc-600 mx-2">·</span>')
+        : '<span class="text-zinc-500">Closed — rest &amp; recover</span>';
+      return `
+        <div class="day-row ${isToday ? 'today' : ''} flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-4 py-4 rounded-2xl border border-transparent">
+          <div class="flex items-center gap-3">
+            <span class="font-display font-semibold ${isToday ? 'volt' : ''}">${d.name}</span>
+            ${isToday ? '<span class="text-[9px] tracking-[0.2em] uppercase bg-[var(--volt)] text-black font-bold rounded-full px-2.5 py-1">Today</span>' : ''}
+          </div>
+          <div class="text-sm text-zinc-300 flex flex-wrap items-center">${sessions}</div>
+          ${d.note ? '<div class="text-[10px] tracking-[0.18em] uppercase text-zinc-500 sm:ml-4">' + d.note + '</div>' : ''}
+        </div>`;
+    }).join('');
+  }
+
+  function updateStatus() {
+    const now = karachiNow();
+    const day = now.getDay();
+    const mins = now.getHours() * 60 + now.getMinutes();
+    const dot = $('#status-dot'), title = $('#status-title'), sub = $('#status-sub');
+    if (!title) return;
+    const sessions = WEEK[day].sessions;
+    for (const s of sessions) {
+      if (mins >= s[0] * 60 && mins < s[1] * 60) {
+        dot.className = 'w-3 h-3 rounded-full pulse-dot bg-[var(--volt)] text-[var(--volt)]';
+        title.textContent = 'OPEN NOW';
+        title.className = 'font-display font-semibold text-lg volt';
+        sub.textContent = 'Closes ' + fmt(s[1]) + ' · Karachi time';
+        return;
+      }
+    }
+    dot.className = 'w-3 h-3 rounded-full bg-red-400 text-red-400 pulse-dot';
+    title.textContent = 'CLOSED RIGHT NOW';
+    title.className = 'font-display font-semibold text-lg text-red-300';
+    // find next session
+    for (const s of sessions) {
+      if (mins < s[0] * 60) { sub.textContent = 'Opens today at ' + fmt(s[0]); return; }
+    }
+    for (let i = 1; i <= 7; i++) {
+      const nd = (day + i) % 7;
+      if (WEEK[nd].sessions.length) {
+        sub.textContent = 'Opens ' + WEEK[nd].name + ' at ' + fmt(WEEK[nd].sessions[0][0]);
+        return;
+      }
+    }
+  }
+  renderSchedule();
+  updateStatus();
+  setInterval(updateStatus, 60000);
+
+  /* ============================================================
+     EQUIPMENT CARDS
+  ============================================================ */
+  const track = $('#eq-track');
+  if (track) {
+    track.innerHTML = EQUIPMENT.map(e => `
+      <article class="eq-card snap-center shrink-0 w-[82vw] sm:w-[460px] md:w-[520px] h-[64svh] md:h-[68vh] max-h-[560px] md:max-h-none glass rounded-[2rem] overflow-hidden card-shine relative group">
+        <img src="${e.img}" alt="${e.t} at Fisico Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-70" loading="lazy" decoding="async" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10"></div>
+        <div class="relative h-full flex flex-col justify-between p-7 sm:p-9">
+          <div class="flex items-start justify-between">
+            <span class="eq-num font-display font-semibold text-6xl sm:text-7xl">${e.n}</span>
+            <span class="glass rounded-full px-4 py-2 text-[10px] tracking-[0.22em] uppercase volt font-bold">${e.tag}</span>
+          </div>
+          <div>
+            <div class="w-11 h-11 rounded-xl bg-[var(--volt)] text-black grid place-items-center mb-5 group-hover:rotate-12 transition-transform duration-500"><i data-lucide="${e.icon}" class="w-5 h-5"></i></div>
+            <h3 class="font-display font-semibold text-2xl sm:text-3xl mb-2.5">${e.t}</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed max-w-sm">${e.d}</p>
+          </div>
+        </div>
+      </article>`).join('');
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
+
+  /* ============================================================
+     REVIEW CARDS
+  ============================================================ */
+  const revTrack = $('#rev-track');
+  if (revTrack) {
+    const card = r => `
+      <div class="rev-card glass rounded-[1.6rem] p-7 mx-3 card-shine shrink-0 select-none">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex gap-1 volt">${'<i data-lucide="star" class="w-4 h-4 fill-[var(--volt)]"></i>'.repeat(5)}</div>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-zinc-500 inline-flex items-center gap-1.5"><i data-lucide="${r.src === 'Google' ? 'map' : 'facebook'}" class="w-3.5 h-3.5"></i>${r.src}</span>
+        </div>
+        <p class="text-sm text-zinc-300 leading-relaxed mb-6">“${r.q}”</p>
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-full bg-[var(--volt)]/15 volt grid place-items-center font-display font-bold text-sm">${r.name.charAt(0)}</span>
+          <div><div class="text-sm font-semibold">${r.name}</div><div class="text-[11px] text-zinc-500">Verified member</div></div>
+        </div>
+      </div>`;
+    revTrack.innerHTML = REVIEWS.map(card).join('') + REVIEWS.map(card).join('');
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
+
+  /* ============================================================
+     SMOOTH SCROLL (Lenis) + GSAP
+  ============================================================ */
+  if (typeof Lenis !== 'undefined' && hasGSAP && !reduceMotion) {
+    lenis = new Lenis({ duration: 1.3, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function scrollTo(target) {
+    const el = typeof target === 'string' ? $(target) : target;
+    if (!el) return;
+    if (lenis) lenis.scrollTo(el, { offset: -90, duration: 1.5 });
+    else el.scrollIntoView({ behavior: 'smooth' });
+  }
+  $$('[data-scroll]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    closeMenu();
+    scrollTo(a.getAttribute('data-scroll'));
+  }));
+
+  /* ---------------- mobile menu ---------------- */
+  const mm = $('#mobile-menu');
+  function openMenu() {
+    mm.classList.remove('hidden');
+    if (hasGSAP) gsap.fromTo('#mobile-menu .mob-link', { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.06, duration: .6, ease: 'power3.out' });
+    if (lenis) lenis.stop();
+  }
+  function closeMenu() { mm.classList.add('hidden'); if (lenis) lenis.start(); }
+  $('#menu-btn') && $('#menu-btn').addEventListener('click', openMenu);
+  $('#menu-close') && $('#menu-close').addEventListener('click', closeMenu);
+
+  /* ============================================================
+     PRELOADER + INTRO
+  ============================================================ */
+  let introDone = false;
+  function forceHide() {
+    if (introDone) return;
+    introDone = true;
+    const p = $('#preloader'); if (p) p.classList.add('done');
+    $$('.line-inner').forEach(el => el.style.transform = 'translateY(0)');
+    ['#nav', '.hero-cta', '.hero-chips', '.hero-stats', '.hero-scroll'].forEach(s => {
+      const el = $(s); if (el) { el.style.opacity = 1; el.style.transform = s === '#nav' ? 'translate(-50%,0)' : 'none'; }
+    });
+  }
+  setTimeout(forceHide, 7000);
+
+  function playIntro() {
+    if (introDone) return;
+    if (!hasGSAP) { forceHide(); return; }
+    introDone = true;
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+    tl.to('#pre-brand', { yPercent: 0, duration: .9, ease: 'power4.out' }, 0)
+      .to('#pre-sub', { yPercent: 0, duration: .8 }, .15)
+      .to('#pre-bar', { scaleX: 1, duration: 1.7, ease: 'power2.inOut' }, .2)
+      .to({ v: 0 }, {
+        v: 100, duration: 1.7, ease: 'power2.inOut',
+        onUpdate: function () { $('#pre-num').textContent = Math.round(this.targets()[0].v); }
+      }, .2)
+      .to('#pre-brand, #pre-sub', { yPercent: -120, duration: .6, ease: 'power3.in' }, '+=.15')
+      .to('#preloader .wipe', { scaleY: 1, duration: .5, ease: 'power4.in' }, '<.1')
+      .to('#preloader .veil', { opacity: 0, duration: .5 }, '<')
+      .set('#preloader', { display: 'none' })
+      .to('#preloader .wipe', { scaleY: 0, transformOrigin: 'top', duration: .7, ease: 'power4.out' }, '<')
+      .to('#nav', { y: 0, xPercent: -50, left: '50%', opacity: 1, duration: 1, ease: 'power4.out', startAt: { y: -30 } }, '-=.5')
+      .set('#nav', { clearProps: 'transform' })
+      .to('.hero-cta', { opacity: 1, y: 0, duration: .9 }, '-=.8')
+      .to('.hero-chips', { opacity: 1, y: 0, duration: .9 }, '-=.7')
+      .to('.hero-stats', { opacity: 1, y: 0, duration: 1 }, '-=.6')
+      .to('.hero-scroll', { opacity: .8, duration: .8 }, '-=.5')
+      .call(() => { if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh(); });
+    // headline lines
+    gsap.utils.toArray('main .line-inner').forEach((el, i) => {
+      gsap.to(el, { yPercent: 0, duration: 1.2, delay: 2.9 + i * 0.12, ease: 'power4.out' });
+    });
+  }
+  window.addEventListener('load', playIntro);
+  setTimeout(playIntro, 2400); // in case load hangs on map iframe
+
+  /* ============================================================
+     SCROLL ANIMATIONS
+  ============================================================ */
+  if (hasGSAP) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // generic reveals
+    $$('[data-reveal]').forEach(el => {
+      gsap.fromTo(el, { y: 60, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 1.1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' }
+      });
+    });
+
+    // counters
+    $$('[data-count]').forEach(el => {
+      const target = +el.getAttribute('data-count');
+      ScrollTrigger.create({
+        trigger: el, start: 'top 92%', once: true,
+        onEnter: () => gsap.to({ v: 0 }, { v: target, duration: 1.8, ease: 'power3.out', onUpdate: function () { el.textContent = Math.round(this.targets()[0].v); } })
+      });
+    });
+
+    // parallax images
+    $$('.parallax-img').forEach(el => {
+      gsap.to(el, {
+        y: (+el.getAttribute('data-speed') || 0) * 3, ease: 'none',
+        scrollTrigger: { trigger: el.closest('section'), start: 'top bottom', end: 'bottom top', scrub: 1.2 }
+      });
+    });
+
+    // horizontal equipment (desktop)
+    ScrollTrigger.matchMedia({
+      '(min-width: 768px)': function () {
+        const pin = $('#eq-pin');
+        const amt = () => track.scrollWidth - window.innerWidth;
+        gsap.to(track, {
+          x: () => -amt(), ease: 'none',
+          scrollTrigger: {
+            trigger: pin, start: 'top top', end: () => '+=' + amt(),
+            pin: true, scrub: 1.1, invalidateOnRefresh: true, anticipatePin: 1,
+            onUpdate: self => { const p = $('#eq-progress'); if (p) p.style.transform = 'scaleX(' + self.progress + ')'; }
+          }
+        });
+      }
+    });
+
+    // hero parallax out
+    gsap.to('#top > section:first-child > div.max-w-\\[1400px\\]', {
+      y: -70, opacity: .35, ease: 'none',
+      scrollTrigger: { trigger: 'main', start: 'top top', end: '60% top', scrub: true }
+    });
+
+    window.addEventListener('resize', () => ScrollTrigger.refresh());
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
+  }
+
+  /* ============================================================
+     CARD SHINE + TILT + MAGNETIC
+  ============================================================ */
+  if (fine) {
+    $$('.card-shine').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+        card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+      });
+    });
+    if (hasGSAP && !reduceMotion) {
+      $$('[data-tilt]').forEach(el => {
+        const rx = gsap.quickTo(el, 'rotationX', { duration: .6, ease: 'power3' });
+        const ry = gsap.quickTo(el, 'rotationY', { duration: .6, ease: 'power3' });
+        gsap.set(el, { transformPerspective: 900 });
+        el.addEventListener('pointermove', e => {
+          const r = el.getBoundingClientRect();
+          ry(((e.clientX - r.left) / r.width - .5) * 10);
+          rx(-((e.clientY - r.top) / r.height - .5) * 10);
+        });
+        el.addEventListener('pointerleave', () => { rx(0); ry(0); });
+      });
+      $$('[data-mag]').forEach(el => {
+        const xq = gsap.quickTo(el, 'x', { duration: .5, ease: 'power3' });
+        const yq = gsap.quickTo(el, 'y', { duration: .5, ease: 'power3' });
+        el.addEventListener('pointermove', e => {
+          const r = el.getBoundingClientRect();
+          xq((e.clientX - r.left - r.width / 2) * .25);
+          yq((e.clientY - r.top - r.height / 2) * .35);
+        });
+        el.addEventListener('pointerleave', () => { xq(0); yq(0); });
+      });
+    }
+
+    /* ---------------- custom cursor ---------------- */
+    const dot = $('.cursor-dot'), ring = $('.cursor-ring');
+    let mx = innerWidth / 2, my = innerHeight / 2, rx2 = mx, ry2 = my;
+    window.addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+    (function loop() { rx2 += (mx - rx2) * .13; ry2 += (my - ry2) * .13; ring.style.left = rx2 + 'px'; ring.style.top = ry2 + 'px'; requestAnimationFrame(loop); })();
+    document.addEventListener('pointerover', e => { if (e.target.closest('a,button,[data-mag],input,select,label')) document.body.setAttribute('data-cursor', 'big'); });
+    document.addEventListener('pointerout', e => { if (e.target.closest('a,button,[data-mag],input,select,label')) document.body.setAttribute('data-cursor', ''); });
+  }
+
+  /* ============================================================
+     WEBGL — floating 3D dumbbell backdrop
+  ============================================================ */
+  (function webgl() {
+    const canvas = $('#webgl');
+    if (!canvas || typeof THREE === 'undefined') return;
+    let W = innerWidth, H = innerHeight;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setSize(W, H);
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x08080a, 7, 16);
+    const camera = new THREE.PerspectiveCamera(42, W / H, .1, 100);
+    camera.position.set(0, 0, 9);
+
+    // lights
+    scene.add(new THREE.AmbientLight(0xffffff, .35));
+    const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(4, 6, 6); scene.add(key);
+    const voltL = new THREE.PointLight(0xd4ff3f, 18, 20); voltL.position.set(-4, -2, 4); scene.add(voltL);
+    const rim = new THREE.PointLight(0x4060ff, 10, 22); rim.position.set(5, 3, -3); scene.add(rim);
+
+    // dumbbell group
+    const gym = new THREE.Group();
+    const iron  = new THREE.MeshStandardMaterial({ color: 0x1a1a1d, metalness: .9, roughness: .32 });
+    const iron2 = new THREE.MeshStandardMaterial({ color: 0x2c2c31, metalness: .85, roughness: .4 });
+    const voltM = new THREE.MeshStandardMaterial({ color: 0xd4ff3f, metalness: .4, roughness: .35, emissive: 0xd4ff3f, emissiveIntensity: .55 });
+
+    const bar = new THREE.Mesh(new THREE.CylinderGeometry(.13, .13, 5.4, 32), iron2);
+    bar.rotation.z = Math.PI / 2; gym.add(bar);
+    [[1.15, .42, 1.85], [1.0, .4, 2.28], [.78, .36, 2.62]].forEach(([r, h, x]) => {
+      [x, -x].forEach(px => {
+        const plate = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, 6), iron);
+        plate.rotation.z = Math.PI / 2; plate.position.x = px; gym.add(plate);
+      });
+    });
+    [1.52, -1.52].forEach(px => {
+      const collar = new THREE.Mesh(new THREE.CylinderGeometry(.24, .24, .18, 24), voltM);
+      collar.rotation.z = Math.PI / 2; collar.position.x = px; gym.add(collar);
+    });
+    gym.position.set(2.4, 0, 0);
+    scene.add(gym);
+
+    // halo ring
+    const ringG = new THREE.Mesh(new THREE.TorusGeometry(3.4, .012, 12, 180),
+      new THREE.MeshBasicMaterial({ color: 0xd4ff3f, transparent: true, opacity: .5 }));
+    ringG.position.copy(gym.position); scene.add(ringG);
+
+    // particles
+    const N = 420, pos = new Float32Array(N * 3);
+    for (let i = 0; i < N; i++) {
+      pos[i * 3] = (Math.random() - .5) * 22;
+      pos[i * 3 + 1] = (Math.random() - .5) * 14;
+      pos[i * 3 + 2] = (Math.random() - .5) * 10 - 2;
+    }
+    const pGeo = new THREE.BufferGeometry();
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const stars = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0xd4ff3f, size: .025, transparent: true, opacity: .55 }));
+    scene.add(stars);
+
+    let tmx = 0, tmy = 0;
+    if (fine) window.addEventListener('pointermove', e => {
+      tmx = (e.clientX / W - .5) * 2; tmy = (e.clientY / H - .5) * 2;
+    });
+
+    const clock = new THREE.Clock();
+    function tick() {
+      requestAnimationFrame(tick);
+      if (document.hidden) return;
+      const t = clock.getElapsedTime();
+      const scroll = scrollY / Math.max(1, document.body.scrollHeight - H);
+      // idle rotation + mouse parallax + scroll choreography
+      gym.rotation.y = t * .35 + scroll * Math.PI * 2.2 + tmx * .25;
+      gym.rotation.x = Math.sin(t * .4) * .18 - tmy * .2 + scroll * .8;
+      gym.rotation.z = Math.sin(t * .25) * .08;
+      gym.position.y = Math.sin(t * .8) * .22;
+      gym.position.x = 2.4 - Math.sin(scroll * Math.PI * 2) * 4.2;
+      ringG.position.copy(gym.position);
+      ringG.rotation.x = t * .18 + tmy * .3;
+      ringG.rotation.y = t * .12 + tmx * .3;
+      stars.rotation.y = t * .02;
+      voltL.position.x = -4 + Math.sin(t * .6) * 2;
+      // fade canvas as you scroll deep
+      canvas.style.opacity = Math.max(.25, 1 - scroll * 1.4);
+      renderer.render(scene, camera);
+    }
+    if (!reduceMotion) tick(); else renderer.render(scene, camera);
+
+    window.addEventListener('resize', () => {
+      W = innerWidth; H = innerHeight;
+      camera.aspect = W / H; camera.updateProjectionMatrix();
+      renderer.setSize(W, H);
+    });
+  })();
+
+  /* ============================================================
+     WHATSAPP FORM + TOAST
+  ============================================================ */
+  const toast = $('#toast');
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.style.opacity = 1; toast.style.transform = 'translate(-50%,0)';
+    setTimeout(() => { toast.style.opacity = 0; toast.style.transform = 'translate(-50%,20px)'; }, 3200);
+  }
+  $('#join-form') && $('#join-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#f-name').value.trim();
+    const goal = $('#f-goal').value;
+    const shift = (document.querySelector('input[name="shift"]:checked') || {}).value || 'Morning';
+    if (!name) { showToast('Please enter your name first'); return; }
+    const msg = 'Assalam-o-Alaikum! My name is ' + name + '. I want to join Fisico Fitness Gym. Goal: ' + goal + '. Preferred shift: ' + shift + '. Please share membership details.';
+    window.open('https://wa.me/923412386871?text=' + encodeURIComponent(msg), '_blank');
+    showToast('Opening WhatsApp — hit send!');
+  });
+
+  // shift option active state
+  $$('.shift-opt').forEach(l => l.addEventListener('click', () => {
+    $$('.shift-opt').forEach(x => x.style.borderColor = '');
+    l.style.borderColor = 'var(--volt)';
+  }));
+})();
+</script>
+</body>
+</html>
